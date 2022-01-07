@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 
+Fonts
+    font-family: 'Inter', sans-serif; (400, 700)
+    font-family: 'Lexend Deca', sans-serif; (400)
+*/
+
+/* Hide mobile image */
+.mobile.image{
+    display:none;
+}
+
+body {
+    background-color: hsl(233, 47%, 7%);
+}
+
+#cardList{
+    min-height: 100vh;
+
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: hsl(244, 38%, 16%);
+    max-width: 80%;
+    min-width: 896px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.image {
+    vertical-align: middle;
+}
+
+.cardContentContainer{
+    margin: 3% 5%;
+    width: 35%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.cardTitle, .cardStatValue {
+    color: white;
+    font-size: 2.3rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cardTitle > em {
+    font-style: normal;
+    color: hsl(277, 64%, 61%);
+}
+
+.cardDescription, .cardStatName {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.cardStatList {
+    width: 100%;
+    justify-self: flex-end;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cardStat {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardStatValue {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.cardStatName {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 375px) {
+    * {
+        text-align: center;
+    }
+
+    .desktop.image {
+        display: none;
+    }
+    .mobile.image {
+        display: block;
+        max-width: 100%;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        min-width: auto;
+        max-width: 90%;
+    }
+    .cardContentContainer {
+        width: 80%;
+    }
+
+    .cardTitle {
+        font-size: 1.6rem;
+    }
+    .cardStatList {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Attribution styles */
+.attribution { 
+    color: white;
+    font-size: 1rem; 
+    text-align: center; 
+    clear:both; 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.attribution a { 
+    font-size: 1rem; 
+    color: hsl(228, 45%, 44%); 
+}
