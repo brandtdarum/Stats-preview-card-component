@@ -1,130 +1,136 @@
 * {
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.125rem;
 }
-/* test comment */
+
+/* 
+Fonts
+    font-family: 'Inter', sans-serif; (400, 700)
+    font-family: 'Lexend Deca', sans-serif; (400)
+*/
+
+/* Hide mobile image */
+.mobile.image{
+    display:none;
+}
+
 body {
-    background-color: rgba(9, 26, 47, 1);
+    background-color: hsl(233, 47%, 7%);
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(71, 71, 71, 0.5), rgba(71, 71, 71, 1), rgba(71, 71, 71, 0.5));
-    margin: 20px 0;
-}
+#cardList{
+    min-height: 100vh;
 
-#card-list {
     display:flex;
-    height: 100vh;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
-#card {
-    background-color: rgba(15, 39, 65, 1);
-    max-width: 400px;
+.card{
+    background-color: hsl(244, 38%, 16%);
+    max-width: 80%;
+    min-width: 896px;
     border-radius: 15px;
-    padding: 1rem;
-    margin: 10px;
-    box-shadow: 
-        0 0 5px 15px rgba(0, 0, 0, 0.1),
-        0 0 5px 40px rgba(0, 0, 0, 0.05);
-}
+    overflow: hidden;
 
-#card-text, #card-info  #card-expire {
-    color: rgba(146, 172, 208, 1);
-    margin-top: 0;
-}
-
-#card-info {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-#card-info div {
+.image {
+    vertical-align: middle;
+}
+
+.cardContentContainer{
+    margin: 3% 5%;
+    width: 35%;
+
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
-#card-info span {
-    margin-left: 7px;
-    font-size: 0.8rem;
-}
-
-#card-creator, #card-title {
+.cardTitle, .cardStatValue {
     color: white;
-    text-decoration: none;
+    font-size: 2.3rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-#card-creator:hover, #card-info  #card-price {
-    color: rgba(76, 214, 223, 1);
+.cardTitle > em {
+    font-style: normal;
+    color: hsl(277, 64%, 61%);
+}
+
+.cardDescription, .cardStatName {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    transition: .2s ease;
+    font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
-#card-title {
-    font-size: 1.4rem;
-    font-weight: 400;
-}
-
-#card-creator-container{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-}
-
-#card-creator-img {
-    max-width: 1.5rem;
-
-    border: 1px solid white;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-top: 3px;
-}
-
-#card-creator-container > #card-text {
-    font-size: 1rem;
-    margin-top: 3px;
-}
-
-#card-img-container {
-    position: relative;
-}
-
-#card-img {
-    border-radius: 15px;
-    display: block;
-    transition: .2s ease;
-    max-width: 100%;
-    
-}
-
-#card-icon-view {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(76, 214, 223, 0.5);
-    border-radius: 15px;
-    position: absolute;
-    top: 0;
-    left: 0;
+.cardStatList {
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: .2s ease;
+    justify-self: flex-end;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cardStat {
+    display: flex;
+    flex-direction: column;
 }
 
-#card-icon-view:hover {
-    opacity: 1;
-    transition: .2s ease;
+.cardStatValue {
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
+.cardStatName {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 375px) {
+    * {
+        text-align: center;
+    }
+
+    .desktop.image {
+        display: none;
+    }
+    .mobile.image {
+        display: block;
+        max-width: 100%;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        min-width: auto;
+        max-width: 90%;
+    }
+    .cardContentContainer {
+        width: 80%;
+    }
+
+    .cardTitle {
+        font-size: 1.6rem;
+    }
+    .cardStatList {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Attribution styles */
 .attribution { 
+    color: white;
     font-size: 1rem; 
     text-align: center; 
     clear:both; 
