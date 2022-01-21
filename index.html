@@ -9,25 +9,46 @@
   <title>Frontend Mentor | Stats preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  Get insights that help your business grow.
-
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
-
-  10k+ companies
-  314 templates
-  12m+ queries
-
+  <main class="container-fluid d-flex justify-content-center align-items-center ">
+    <article id="stat-card" class="card border-0 d-flex flex-xxl-row-reverse align-items-center text-light p-0">
+      <div id="img-container"class="p-0 rounded-top position-relative">
+        <img src="./images/image-header-mobile.jpg" alt="Mobile header" class="card-img d-xxl-none">
+        <img src="./images/image-header-desktop.jpg" alt="Mobile header" class="card-img d-none d-xxl-block">
+        <div class="mask w-100 h-100 position-absolute top-0 start-0 opacity-50"></div>
+      </div>
+      <div class="card-body d-flex flex-column justify-content-between text-center text-xxl-start m-xxl-5">
+        <h3 class="h2 card-title">Get <span id="insights">insights</span> that help your business grow.</h3>
+        <p class="card-subtitle text-secondary">Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+        
+        <div id="statistics" class="row gap-4 gap-xxl-0 mt-4">
+          <div class="col-12 col-xxl-4">
+            <span id="number" class="h4">10k+</span><br>
+            <small id="statistic" class="text-uppercase text-secondary">companies</small>
+          </div>
+          <div class="col-12 col-xxl-4">
+            <span id="number" class="h4">314</span><br>
+            <small id="statistic" class="text-uppercase text-secondary">templates</small>
+          </div>
+          <div class="col-12 col-xxl-4">
+            <span id="number" class="h4">12m+</span><br>
+            <small id="statistic" class="text-uppercase text-secondary">queries</small>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
